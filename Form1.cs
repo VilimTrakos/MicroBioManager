@@ -16,5 +16,21 @@ namespace MicroBioManager
         {
             InitializeComponent();
         }
+
+        private void DodajKrvna_Click(object sender, EventArgs e)
+        {
+            FrmKrvnaAnaliza frmKrvnaAnaliza = new FrmKrvnaAnaliza();
+            Hide();
+            frmKrvnaAnaliza.ShowDialog();
+            Close();
+        }
+
+        private void DodajUrin_Click(object sender, EventArgs e)
+        {
+            FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina();
+            Hide();
+            frmAnalizaUrina.ShowDialog();
+            Close();
+        }
     }
 }
