@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MicroBioManager.Classes;
+using MicroBioManager.Repos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,7 @@ namespace MicroBioManager
 {
     public partial class FrmLogin : Form
     {
-        string username = "test";
-        string password = "test";
+        public static Zaposlenik LoggedZaposlenik { get; set; }
         public FrmLogin()
         {
             InitializeComponent();
@@ -31,8 +32,10 @@ namespace MicroBioManager
             }
             else
             {
-                if (txtUsername.Text == username && txtPassword.Text == password)
+                Zaposlenik zaposlenik = ZaposlenikRepos.GetZaposlenik(txtUsername.Text);
+                if (zaposlenik!=null && txtPassword.Text == zaposlenik.Password)
                 {
+                    LoggedZaposlenik = zaposlenik;
                     FrmPocetna frmPocetna = new FrmPocetna();
                     Hide();
                     frmPocetna.ShowDialog();
