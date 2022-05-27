@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MicroBioManager
 {
-    public partial class Form1 : Form
+    public partial class FrmPocetna : Form
     {
-        public Form1()
+        public FrmPocetna()
         {
             InitializeComponent();
         }
@@ -32,5 +32,7 @@ namespace MicroBioManager
             frmAnalizaUrina.ShowDialog();
             Close();
         }
+
+       
     }
 }

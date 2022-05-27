@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DBLayer">
+      <HintPath>DLLs\DBLayer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Classes\Pacijent.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\Zaposlenik.cs" />
+    <Compile Include="FrmPocetna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmPocetna.Designer.cs">
+      <DependentUpon>FrmPocetna.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAnalizaUrina.cs">
       <SubType>Form</SubType>
@@ -64,10 +70,19 @@
     <Compile Include="FrmKrvnaAnaliza.Designer.cs">
       <DependentUpon>FrmKrvnaAnaliza.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPocetna.resx">
+      <DependentUpon>FrmPocetna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAnalizaUrina.resx">
       <DependentUpon>FrmAnalizaUrina.cs</DependentUpon>
@@ -96,6 +111,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DLLs\" />
+    <Folder Include="Repos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

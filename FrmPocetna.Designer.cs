@@ -1,6 +1,6 @@
 ﻿namespace MicroBioManager
 {
-    partial class Form1
+    partial class FrmPocetna
     {
         /// <summary>
         /// Required designer variable.
@@ -82,7 +82,7 @@
             this.DodajUrin.UseVisualStyleBackColor = true;
             this.DodajUrin.Click += new System.EventHandler(this.DodajUrin_Click);
             // 
-            // Form1
+            // FrmPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,8 +92,9 @@
             this.Controls.Add(this.DodajKrvna);
             this.Controls.Add(this.Otvori);
             this.Controls.Add(this.PopisNaloga);
-            this.Name = "Form1";
+            this.Name = "FrmPocetna";
             this.Text = "Form1";
+
             ((System.ComponentModel.ISupportInitialize)(this.PopisNaloga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
