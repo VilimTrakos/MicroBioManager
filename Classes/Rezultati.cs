@@ -20,6 +20,7 @@ namespace MicroBioManager.Classes
         public string Cilindri { get; set; }
         public string Bakterije { get; set; }
         public string Eptilne_celije { get; set; }
+
         public string Urati_amorfni { get; set; }
         public string Sluz { get; set; }
         public string Gljivice { get; set; }
