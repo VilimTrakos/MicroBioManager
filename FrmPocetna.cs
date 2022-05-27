@@ -29,7 +29,7 @@ namespace MicroBioManager
 
         private void DodajUrin_Click(object sender, EventArgs e)
         {
-            FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina();
+            FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina(null);
             Hide();
             frmAnalizaUrina.ShowDialog();
             Close();
@@ -52,6 +52,18 @@ namespace MicroBioManager
             dgvPopisNaloga.Columns["Komentari"].DisplayIndex = 5;
 
             
+        }
+
+        private void OtvoriNalog_Click(object sender, EventArgs e)
+        {
+           
+            Nalog oznaceniNalog = dgvPopisNaloga.CurrentRow.DataBoundItem as Nalog;
+            if (oznaceniNalog != null)
+            {
+               FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina(oznaceniNalog);
+                frmAnalizaUrina.ShowDialog();
+
+            }
         }
     }
 }

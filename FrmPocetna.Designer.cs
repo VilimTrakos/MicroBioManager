@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvPopisNaloga = new System.Windows.Forms.DataGridView();
-            this.Otvori = new System.Windows.Forms.Button();
+            this.OtvoriNalog = new System.Windows.Forms.Button();
             this.DodajKrvna = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
             this.DodajUrin = new System.Windows.Forms.Button();
@@ -48,14 +48,15 @@
             this.dgvPopisNaloga.Size = new System.Drawing.Size(480, 370);
             this.dgvPopisNaloga.TabIndex = 0;
             // 
-            // Otvori
+            // OtvoriNalog
             // 
-            this.Otvori.Location = new System.Drawing.Point(545, 98);
-            this.Otvori.Name = "Otvori";
-            this.Otvori.Size = new System.Drawing.Size(196, 32);
-            this.Otvori.TabIndex = 1;
-            this.Otvori.Text = "Otvori nalog";
-            this.Otvori.UseVisualStyleBackColor = true;
+            this.OtvoriNalog.Location = new System.Drawing.Point(545, 98);
+            this.OtvoriNalog.Name = "OtvoriNalog";
+            this.OtvoriNalog.Size = new System.Drawing.Size(196, 32);
+            this.OtvoriNalog.TabIndex = 1;
+            this.OtvoriNalog.Text = "Otvori nalog";
+            this.OtvoriNalog.UseVisualStyleBackColor = true;
+            this.OtvoriNalog.Click += new System.EventHandler(this.OtvoriNalog_Click);
             // 
             // DodajKrvna
             // 
@@ -102,7 +103,7 @@
             this.Controls.Add(this.DodajUrin);
             this.Controls.Add(this.search);
             this.Controls.Add(this.DodajKrvna);
-            this.Controls.Add(this.Otvori);
+            this.Controls.Add(this.OtvoriNalog);
             this.Controls.Add(this.dgvPopisNaloga);
             this.Name = "FrmPocetna";
             this.Text = "MicroBioManager ";
@@ -116,7 +117,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPopisNaloga;
-        private System.Windows.Forms.Button Otvori;
+        private System.Windows.Forms.Button OtvoriNalog;
         private System.Windows.Forms.Button DodajKrvna;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Button DodajUrin;

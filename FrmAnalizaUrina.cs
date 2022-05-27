@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicroBioManager.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,16 @@ namespace MicroBioManager
 {
     public partial class FrmAnalizaUrina : Form
     {
-        public FrmAnalizaUrina()
+        private Nalog nalog;
+        public FrmAnalizaUrina(Nalog oznaceniNalog)
         {
             InitializeComponent();
+            nalog = oznaceniNalog;
         }
 
-        
+        private void FrmAnalizaUrina_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -348,6 +348,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "FrmAnalizaUrina";
             this.Text = "FrmAnalizaUrina";
+            this.Load += new System.EventHandler(this.FrmAnalizaUrina_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
