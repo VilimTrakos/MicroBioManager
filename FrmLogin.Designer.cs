@@ -102,6 +102,7 @@
             this.Controls.Add(this.txtUsername);
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

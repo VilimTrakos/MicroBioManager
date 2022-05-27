@@ -9,6 +9,7 @@ namespace MicroBioManager.Classes
     public class Pacijent : Person
     {
         public string Uzorak { get; set; }
+        public int Sifra { get; set; }
 
     }
 }

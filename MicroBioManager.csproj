@@ -49,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Nalog.cs" />
     <Compile Include="Classes\Pacijent.cs" />
     <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\Rezultati.cs" />
     <Compile Include="Classes\Zaposlenik.cs" />
     <Compile Include="FrmPocetna.cs">
       <SubType>Form</SubType>
@@ -78,6 +80,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\NalogRepos.cs" />
+    <Compile Include="Repos\RezultatiRepos.cs" />
     <Compile Include="Repos\ZaposlenikRepos.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

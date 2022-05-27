@@ -17,6 +17,9 @@ namespace MicroBioManager
             InitializeComponent();
         }
 
-        
+        private void FrmKrvnaAnaliza_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

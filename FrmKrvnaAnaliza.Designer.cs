@@ -467,7 +467,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MCV);
             this.Name = "FrmKrvnaAnaliza";
-            this.Text = "KrvnaAnaliza";
+            this.Text = "MCV";
+            this.Load += new System.EventHandler(this.FrmKrvnaAnaliza_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
