@@ -15,6 +15,9 @@ namespace MicroBioManager
     public partial class FrmKrvnaAnaliza : Form
     {
         private Nalog nalog;
+
+        public Nalog oznaceniNalog { get => nalog; set => nalog = value; }
+
         public FrmKrvnaAnaliza(Nalog oznaceniNalog)
         {
             InitializeComponent();
@@ -25,6 +28,7 @@ namespace MicroBioManager
         {
             SetFormText();
             var rezultati = RezultatiRepos.GetRezultate();
+            
            
             
 

@@ -15,18 +15,18 @@ namespace MicroBioManager.Repos
         public static Rezultati GetRezultati(int id)
         {
             Rezultati rezultati = null;
-            string sql = $"SELECT * FROM RezultatiDB WHERE Id ={id}";
+            string sql = $"SELECT * FROM RezultatiDB WHERE Id= {id}";
             DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
-            while (reader.Read())
+            if(reader.HasRows)
             {
                 reader.Read();
                 rezultati = CreateObject(reader);
                 reader.Close();
             }
 
-            reader.Close();
+            
             DB.CloseConnection();
 
             return rezultati;
@@ -45,14 +45,14 @@ namespace MicroBioManager.Repos
                 rezultate.Add(rezultati);
             }
             reader.Close();
-            DB.CloseConnection ();
+            DB.CloseConnection();
             return rezultate;
 
 
         }
 
-      
-       
+
+
         private static Rezultati CreateObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["Id"].ToString());
@@ -93,7 +93,7 @@ namespace MicroBioManager.Repos
 
             var rezultati = new Rezultati
             {
-                Id = id,
+               // Id = id,
                 Uzorak = uzorak,
                 Sifra_pacijenta = sifra_pacijenta,
                 Glukoza = glukoza,
