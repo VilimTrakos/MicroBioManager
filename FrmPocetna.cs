@@ -21,7 +21,7 @@ namespace MicroBioManager
 
         private void DodajKrvna_Click(object sender, EventArgs e)
         {
-            FrmKrvnaAnaliza frmKrvnaAnaliza = new FrmKrvnaAnaliza();
+            FrmKrvnaAnaliza frmKrvnaAnaliza = new FrmKrvnaAnaliza(null);
             Hide();
             frmKrvnaAnaliza.ShowDialog();
             Close();
@@ -48,7 +48,7 @@ namespace MicroBioManager
             dgvPopisNaloga.Columns["Sifra_pacijenta"].DisplayIndex = 1;
             dgvPopisNaloga.Columns["Id_rezultata"].DisplayIndex = 2;
             dgvPopisNaloga.Columns["Faza_pretrage"].DisplayIndex = 3;
-            dgvPopisNaloga.Columns["Naziv_pretrage"].DisplayIndex = 4;
+            dgvPopisNaloga.Columns["Uzorak"].DisplayIndex = 4;
             dgvPopisNaloga.Columns["Komentari"].DisplayIndex = 5;
 
             
@@ -60,8 +60,16 @@ namespace MicroBioManager
             Nalog oznaceniNalog = dgvPopisNaloga.CurrentRow.DataBoundItem as Nalog;
             if (oznaceniNalog != null)
             {
-               FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina(oznaceniNalog);
-                frmAnalizaUrina.ShowDialog();
+                if (oznaceniNalog.Uzorak == "Urin")
+                {
+                    FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina(oznaceniNalog);
+                    frmAnalizaUrina.ShowDialog();
+                }
+                else
+                {
+                    FrmKrvnaAnaliza frmKrvnaAnaliza = new FrmKrvnaAnaliza(oznaceniNalog);
+                    frmKrvnaAnaliza.ShowDialog();
+                }
 
             }
         }

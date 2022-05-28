@@ -12,7 +12,7 @@ namespace MicroBioManager.Classes
         public string Faza_pretrage { get; set; }
         public string Komentari { get; set; }
         public int Sifra_pacijenta { get; set; }
-        public string Naziv_pretrage { get; set; }
+        public string Uzorak { get; set; }
         public int Id_zaposlenika { get; set; }
         public int Id_rezultata { get; set; }
 

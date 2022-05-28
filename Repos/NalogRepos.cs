@@ -54,7 +54,7 @@ namespace MicroBioManager.Repos
             string fazaPretrage = reader["Faza_pretrage"].ToString();
             string komentari = reader["Komentari"].ToString();
             int sifraPacijenta = int.Parse(reader["Sifra_pacijenta"].ToString());
-            string nazivPretrage = reader["Naziv_pretrage"].ToString();
+            string nazivPretrage = reader["Uzorak"].ToString();
             int idZaposlenika = int.Parse(reader["Zaposlenik_id"].ToString());
             int idRezultata = int.Parse(reader["Rezultati_id"].ToString());
 
@@ -64,7 +64,7 @@ namespace MicroBioManager.Repos
                 Faza_pretrage = fazaPretrage,
                 Komentari = komentari,
                 Sifra_pacijenta = sifraPacijenta,
-                Naziv_pretrage= nazivPretrage,
+                Uzorak= nazivPretrage,
                 Id_rezultata = idRezultata,
                 Id_zaposlenika = idZaposlenika
             };

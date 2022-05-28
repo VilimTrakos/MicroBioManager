@@ -71,6 +71,7 @@
             this.SaveKr = new System.Windows.Forms.Button();
             this.SifraNaloga = new System.Windows.Forms.TextBox();
             this.Pacijent = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MCV
@@ -418,11 +419,22 @@
             this.Pacijent.TabIndex = 42;
             this.Pacijent.Text = "Pacijent";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(370, 348);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(168, 27);
+            this.btnClose.TabIndex = 44;
+            this.btnClose.Text = "Zatvori";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FrmKrvnaAnaliza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.Pacijent);
             this.Controls.Add(this.SifraNaloga);
             this.Controls.Add(this.SaveKr);
@@ -519,5 +531,6 @@
         private System.Windows.Forms.Button SaveKr;
         private System.Windows.Forms.TextBox SifraNaloga;
         private System.Windows.Forms.TextBox Pacijent;
+        private System.Windows.Forms.Button btnClose;
     }
 }

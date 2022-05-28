@@ -31,6 +31,7 @@ namespace MicroBioManager.Repos
 
             return rezultati;
         }
+
         public static List<Rezultati> GetRezultate()
         {
             List<Rezultati> rezultate = new List<Rezultati>();
@@ -49,26 +50,9 @@ namespace MicroBioManager.Repos
 
 
         }
-        public static Rezultati GetRezultatiKrvi()
-        {
-            Rezultati rezultati = null;
-            string sql = $"SELECT * FROM RezultatiDB WHERE Uzorak = Krv";
-            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
-            DB.OpenConnection();
-            var reader = DB.GetDataReader(sql);
-            while (reader.Read())
-            {
-                reader.Read();
-                rezultati = CreateObject(reader);
-                reader.Close();
-            }
 
-            reader.Close();
-            DB.CloseConnection();
-
-            return rezultati;
-        }
-
+      
+       
         private static Rezultati CreateObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["Id"].ToString());

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MicroBioManager.Classes;
+using MicroBioManager.Repos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,30 @@ namespace MicroBioManager
 {
     public partial class FrmKrvnaAnaliza : Form
     {
-        public FrmKrvnaAnaliza()
+        private Nalog nalog;
+        public FrmKrvnaAnaliza(Nalog oznaceniNalog)
         {
             InitializeComponent();
+            nalog = oznaceniNalog;
         }
 
         private void FrmKrvnaAnaliza_Load(object sender, EventArgs e)
         {
+            SetFormText();
+            var rezultati = RezultatiRepos.GetRezultate();
+           
+            
 
+        }
+
+        private void SetFormText()
+        {
+            Text = nalog.Sifra_pacijenta + " " + nalog.Id_rezultata;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
