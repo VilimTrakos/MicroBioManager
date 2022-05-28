@@ -12,4 +12,6 @@ namespace MicroBioManager.Classes
         public int Sifra { get; set; }
 
     }
+   
+
 }

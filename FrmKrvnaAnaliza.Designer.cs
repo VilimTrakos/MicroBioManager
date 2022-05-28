@@ -72,6 +72,8 @@
             this.SifraNaloga = new System.Windows.Forms.TextBox();
             this.Pacijent = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // MCV
@@ -429,11 +431,31 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(367, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 16);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Sifra naloga:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(367, 81);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 16);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Sifra pacijenta:";
+            // 
             // FrmKrvnaAnaliza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 450);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.Pacijent);
             this.Controls.Add(this.SifraNaloga);
@@ -532,5 +554,7 @@
         private System.Windows.Forms.TextBox SifraNaloga;
         private System.Windows.Forms.TextBox Pacijent;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label17;
     }
 }
