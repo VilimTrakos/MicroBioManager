@@ -32,6 +32,7 @@ namespace MicroBioManager.Repos
             return rezultati;
         }
 
+
         public static List<Rezultati> GetRezultate()
         {
             List<Rezultati> rezultate = new List<Rezultati>();

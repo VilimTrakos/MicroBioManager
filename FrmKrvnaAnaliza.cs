@@ -1,4 +1,5 @@
-﻿using MicroBioManager.Classes;
+﻿using DBLayer;
+using MicroBioManager.Classes;
 using MicroBioManager.Repos;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,7 @@ namespace MicroBioManager
             Eozinofili.Text=rezultati.Eozinofili;
             Eritrociti.Text = rezultati.Eritrociti;
             Leukociti.Text = rezultati.Leukociti;
+            
 
             
             Pacijent.Text = oznaceniNalog.Sifra_pacijenta.ToString();
@@ -64,6 +66,14 @@ namespace MicroBioManager
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void SaveKr_Click(object sender, EventArgs e)
+        {
+            var zaposlenik = FrmLogin.LoggedZaposlenik;
+            var rezultati = RezultatiRepos.GetRezultati(oznaceniNalog.Id);
+            var pacijent = PacijentRepos.GetPacijent(oznaceniNalog.Sifra_pacijenta);
+            zaposlenik.UpisiPodatke(pacijent, rezultati);
         }
     }
 }

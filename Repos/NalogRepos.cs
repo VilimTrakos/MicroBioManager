@@ -14,7 +14,27 @@ namespace MicroBioManager.Repos
         public static Nalog GetNalog(Pacijent pacijent, Rezultati rezultati)
         {
             Nalog nalog = null;
-            string sql = $"SELECT * FROM NalogDB WHERE sifra_pacijenta = {pacijent.Sifra} AND Rezultati_id = {rezultati.Id}";
+            string sql = $"SELECT * FROM NaloziDB WHERE Sifra_pacijenta = {rezultati.Sifra_pacijenta} AND Rezultati_id = {rezultati.Id}";
+            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
+            DB.OpenConnection();
+            SqlDataReader reader = DB.GetDataReader(sql);
+
+            
+
+            if (reader.HasRows)
+            {
+                reader.Read();
+                nalog = CreateObject(reader);
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return nalog;
+
+        }
+        public static Nalog GetNalog(int sifra, int rez_id)
+        {
+            Nalog nalog = null;
+            string sql = $"SELECT * FROM NaloziDB WHERE sifra_pacijenta = {sifra} AND Rezultati_id = {rez_id}";
             DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
             DB.OpenConnection();
             SqlDataReader reader = DB.GetDataReader(sql);
@@ -28,6 +48,8 @@ namespace MicroBioManager.Repos
             return nalog;
 
         }
+
+
         public static List<Nalog> GetNaloge(Pacijent pacijent)
         {
             var nalozi = new List<Nalog>();
@@ -99,6 +121,71 @@ namespace MicroBioManager.Repos
             };
 
             return nalog;
+        }
+
+        public static void InsertRezultati(Pacijent pacijent, Rezultati rezultati)
+        {
+            
+
+            int input = 0;
+            if (rezultati.Uzorak == "Krv")
+            {
+                 input = 1;
+            }
+            else
+            {
+                 input = 2;
+            }
+            string sql = $""+
+                $"INSERT INTO RezultatiDB (Sifra_pacijenta, Uzorak,  Eritrociti, Leukociti, MCV, MCH, MCHC, RDW, MPV, PDW, EOS, LYM, BASO, PLT, NEU, Bazofili, Monociti, Limfociti, Hemoglobin, Hematokrit, Neutroliti, Eozinofili) VALUES " +
+                $"(" +
+                $"{rezultati.Sifra_pacijenta}," +
+                $"{input}," +
+                $"{rezultati.Eritrociti}," +
+                $"{rezultati.Leukociti}," +
+                $"{rezultati.MCV}," +
+                $"{rezultati.MCH}," +
+                $"{rezultati.MCHC}," +
+                $"{rezultati.RDW}," +
+                $"{rezultati.MPV}," +
+                $"{rezultati.PDW}," +
+                $"{rezultati.EOS}," +
+                $"{rezultati.LYM}," +
+                $"{rezultati.BASO}," +
+                $"{rezultati.PLT}," +
+                $"{rezultati.NEU}," +
+                $"{rezultati.Bazofili}," +
+                $"{rezultati.Monociti}," +
+                $"{rezultati.Limfociti}," +
+                $"{rezultati.Hemoglobin}," +
+                $"{rezultati.Hematokrit}," +
+                $"{rezultati.Neutroliti}," +
+                $"{rezultati.Eozinofili})";
+
+            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+        public static void UpdateRezultati(Rezultati rezultati, Pacijent pacijent)
+        {
+            string sql = $"UPDATE RezultatiDB SET Glukoza, Bilirubin, Ketoni, " +
+                $"Nitriti, Eritrociti, Leukociti, Cilindri, " +
+                $"Bakterije, Eptilne_celije, Urati_amorfni" +
+                $"Sluz, Gljivice, Urea, Kristali_kalcij_oksalata, " +
+                $"MCV, MCH, MCHC, RDW, MPV, PDW, EOS, LYM, BASO, PLT, NEU, " +
+                $"Bazofili, Monociti, Limfociti, Hemoglobin, Hematokrit, Neutroliti, Eozinofili) VALUES {rezultati.Glukoza}," +
+                $"{rezultati.Bilirubin},{rezultati.Ketoni}," +
+                $"{rezultati.Nitriti},{rezultati.Eritrociti},{rezultati.Leukociti},{rezultati.Cilindri},{rezultati.Bakterije}," +
+                $"{rezultati.Eptilne_celije}, {rezultati.Urati_amorfni},{rezultati.Sluz},{rezultati.Gljivice},{rezultati.Urea}," +
+                $"{rezultati.Kristali_kalcij_oksalata},{rezultati.MCV},{rezultati.MCH},{rezultati.MCHC},{rezultati.RDW}," +
+                $"{rezultati.MPV},{rezultati.PDW},{rezultati.EOS},{rezultati.LYM},{rezultati.BASO},{rezultati.PLT},{rezultati.NEU}," +
+                $"{rezultati.Bazofili},{rezultati.Monociti},{rezultati.Limfociti},{rezultati.Hemoglobin},{rezultati.Hematokrit}," +
+                $"{rezultati.Neutroliti},{rezultati.Eozinofili} WHERE Sifra_pacijenta ={rezultati.Sifra_pacijenta} AND Id={rezultati.Id}";
+            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
         }
 
     }

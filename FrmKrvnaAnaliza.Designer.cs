@@ -404,6 +404,7 @@
             this.SaveKr.TabIndex = 40;
             this.SaveKr.Text = "Spremi";
             this.SaveKr.UseVisualStyleBackColor = true;
+            this.SaveKr.Click += new System.EventHandler(this.SaveKr_Click);
             // 
             // SifraNaloga
             // 
