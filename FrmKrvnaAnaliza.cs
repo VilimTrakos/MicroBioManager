@@ -89,13 +89,13 @@ namespace MicroBioManager
             var eritrociti= Eritrociti.Text;
             var leukociti= Leukociti.Text;
             var sifra_pacijenta = Pacijent.Text;
-            var sifra_naloga = SifraNaloga.Text;
+            
 
             string sql = $"" +
-                $"UPDATE RezultatiDB SET Sifra_pacijenta ={sifra_pacijenta}, Uzorak ={1},  Eritrociti={eritrociti}" +
+                $"UPDATE RezultatiDB SET Sifra_pacijenta ={sifra_pacijenta}, Uzorak ='{"Krv"}',  Eritrociti={eritrociti}" +
                 $", Leukociti= {leukociti}, MCV={mcv}, MCH={mch}, MCHC={mchc}, RDW={rdw}, MPV={mpv}, PDW={pdw}, EOS={eos}," +
                 $" LYM={lym}, BASO={baso}, PLT={plt}, NEU={neu}, Bazofili={bazofili}, Monociti={monociti}, Limfociti={limfociti}," +
-                $" Hemoglobin={hemoglobin}, Hematokrit={hematokrit}, Neutroliti={neutroliti}, Eozinofili ={eozinofili} WHERE Sifra_pacijenta ={sifra_pacijenta} ";
+                $" Hemoglobin={hemoglobin}, Hematokrit={hematokrit}, Neutroliti={neutroliti}, Eozinofili ={eozinofili} WHERE Id = {nalog.Id_rezultata} ";
             DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
