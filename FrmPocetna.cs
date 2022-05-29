@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,6 +73,12 @@ namespace MicroBioManager
                 }
 
             }
+        }
+
+        private void btnPretraga_Click(object sender, EventArgs e)
+        {
+            FrmPretraga frmpretraga = new FrmPretraga();
+            frmpretraga.ShowDialog();
         }
     }
 }

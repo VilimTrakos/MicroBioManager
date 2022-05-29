@@ -31,10 +31,10 @@ namespace MicroBioManager.Repos
             return nalog;
 
         }
-        public static Nalog GetNalog(int sifra, int rez_id)
+        public static Nalog GetNalogSifra(int sifra)
         {
             Nalog nalog = null;
-            string sql = $"SELECT * FROM NaloziDB WHERE sifra_pacijenta = {sifra} AND Rezultati_id = {rez_id}";
+            string sql = $"SELECT * FROM NaloziDB WHERE sifra_pacijenta = {sifra}";
             DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
             DB.OpenConnection();
             SqlDataReader reader = DB.GetDataReader(sql);
@@ -50,10 +50,10 @@ namespace MicroBioManager.Repos
         }
 
 
-        public static List<Nalog> GetNaloge(Pacijent pacijent)
+        public static List<Nalog> GetNalogeSifra(int sifra)
         {
             var nalozi = new List<Nalog>();
-            string sql = $"SELECT * FROM NaloziDB WHERE Sifra_pacijenta = {pacijent.Sifra}";
+            string sql = $"SELECT * FROM NaloziDB WHERE Sifra_pacijenta = {sifra}";
             DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
