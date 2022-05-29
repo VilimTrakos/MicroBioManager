@@ -21,7 +21,7 @@ namespace MicroBioManager
 
         private void DodajKrvna_Click(object sender, EventArgs e)
         {
-            FrmKrvnaAnaliza frmKrvnaAnaliza = new FrmKrvnaAnaliza(null);
+            FrmKrvnaAnaliza frmKrvnaAnaliza = new FrmKrvnaAnaliza();
             Hide();
             frmKrvnaAnaliza.ShowDialog();
             Close();
@@ -29,7 +29,7 @@ namespace MicroBioManager
 
         private void DodajUrin_Click(object sender, EventArgs e)
         {
-            FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina(null);
+            FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina();
             Hide();
             frmAnalizaUrina.ShowDialog();
             Close();

@@ -99,13 +99,11 @@ namespace MicroBioManager.Repos
             string komentari = reader["Komentari"].ToString();
 
             int sifraPacijenta = int.Parse(reader["Sifra_pacijenta"].ToString());
-           // var sPacijenta = PacijentRepos.GetpacijentS(sifraPacijenta);
-
             string nazivPretrage = reader["Uzorak"].ToString();
             int idZaposlenika = int.Parse(reader["Zaposlenik_id"].ToString());
-           // var zaposlenik = ZaposlenikRepos.GetZaposlenik(idZaposlenika);
+           
             int idRezultata = int.Parse(reader["Rezultati_id"].ToString());
-            //var rezultati = RezultatiRepos.GetRezultati(idRezultata);
+            
            
 
             var nalog = new Nalog
@@ -123,70 +121,7 @@ namespace MicroBioManager.Repos
             return nalog;
         }
 
-        public static void InsertRezultati(Pacijent pacijent, Rezultati rezultati)
-        {
-            
-
-            int input = 0;
-            if (rezultati.Uzorak == "Krv")
-            {
-                 input = 1;
-            }
-            else
-            {
-                 input = 2;
-            }
-            string sql = $""+
-                $"INSERT INTO RezultatiDB (Sifra_pacijenta, Uzorak,  Eritrociti, Leukociti, MCV, MCH, MCHC, RDW, MPV, PDW, EOS, LYM, BASO, PLT, NEU, Bazofili, Monociti, Limfociti, Hemoglobin, Hematokrit, Neutroliti, Eozinofili) VALUES " +
-                $"(" +
-                $"{rezultati.Sifra_pacijenta}," +
-                $"{input}," +
-                $"{rezultati.Eritrociti}," +
-                $"{rezultati.Leukociti}," +
-                $"{rezultati.MCV}," +
-                $"{rezultati.MCH}," +
-                $"{rezultati.MCHC}," +
-                $"{rezultati.RDW}," +
-                $"{rezultati.MPV}," +
-                $"{rezultati.PDW}," +
-                $"{rezultati.EOS}," +
-                $"{rezultati.LYM}," +
-                $"{rezultati.BASO}," +
-                $"{rezultati.PLT}," +
-                $"{rezultati.NEU}," +
-                $"{rezultati.Bazofili}," +
-                $"{rezultati.Monociti}," +
-                $"{rezultati.Limfociti}," +
-                $"{rezultati.Hemoglobin}," +
-                $"{rezultati.Hematokrit}," +
-                $"{rezultati.Neutroliti}," +
-                $"{rezultati.Eozinofili})";
-
-            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
-            DB.OpenConnection();
-            DB.ExecuteCommand(sql);
-            DB.CloseConnection();
-        }
-        public static void UpdateRezultati(Rezultati rezultati, Pacijent pacijent)
-        {
-            string sql = $"UPDATE RezultatiDB SET Glukoza, Bilirubin, Ketoni, " +
-                $"Nitriti, Eritrociti, Leukociti, Cilindri, " +
-                $"Bakterije, Eptilne_celije, Urati_amorfni" +
-                $"Sluz, Gljivice, Urea, Kristali_kalcij_oksalata, " +
-                $"MCV, MCH, MCHC, RDW, MPV, PDW, EOS, LYM, BASO, PLT, NEU, " +
-                $"Bazofili, Monociti, Limfociti, Hemoglobin, Hematokrit, Neutroliti, Eozinofili) VALUES {rezultati.Glukoza}," +
-                $"{rezultati.Bilirubin},{rezultati.Ketoni}," +
-                $"{rezultati.Nitriti},{rezultati.Eritrociti},{rezultati.Leukociti},{rezultati.Cilindri},{rezultati.Bakterije}," +
-                $"{rezultati.Eptilne_celije}, {rezultati.Urati_amorfni},{rezultati.Sluz},{rezultati.Gljivice},{rezultati.Urea}," +
-                $"{rezultati.Kristali_kalcij_oksalata},{rezultati.MCV},{rezultati.MCH},{rezultati.MCHC},{rezultati.RDW}," +
-                $"{rezultati.MPV},{rezultati.PDW},{rezultati.EOS},{rezultati.LYM},{rezultati.BASO},{rezultati.PLT},{rezultati.NEU}," +
-                $"{rezultati.Bazofili},{rezultati.Monociti},{rezultati.Limfociti},{rezultati.Hemoglobin},{rezultati.Hematokrit}," +
-                $"{rezultati.Neutroliti},{rezultati.Eozinofili} WHERE Sifra_pacijenta ={rezultati.Sifra_pacijenta} AND Id={rezultati.Id}";
-            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
-            DB.OpenConnection();
-            DB.ExecuteCommand(sql);
-            DB.CloseConnection();
-        }
+        
 
     }
 }

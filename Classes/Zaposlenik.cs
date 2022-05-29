@@ -13,17 +13,9 @@ namespace MicroBioManager.Classes
         public string Password { get; set; }
         public string Uloga { get; set; }
 
-        public void UpisiPodatke(Pacijent pacijent, Rezultati rezultati)
+        public void UpisiPodatke(Rezultati rezultati)
         {
-            var upisi = NalogRepos.GetNalog(pacijent, rezultati);
-            if (upisi == null)
-            {
-                NalogRepos.InsertRezultati(pacijent, rezultati);
-            }
-            else
-            {
-                NalogRepos.UpdateRezultati(rezultati, pacijent);
-            }
+            
 
         }
 

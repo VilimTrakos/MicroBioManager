@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Glukoza = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Bilirubin = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Leukociti = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Eritrociti = new System.Windows.Forms.TextBox();
             this.lable11 = new System.Windows.Forms.Label();
             this.Urea = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.Sluz = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.Kristali_KO = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.UratiAmorfni = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -59,14 +59,16 @@
             this.Pacijent = new System.Windows.Forms.TextBox();
             this.SifraNaloga = new System.Windows.Forms.TextBox();
             this.SaveUr = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Glukoza
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
+            this.Glukoza.Location = new System.Drawing.Point(80, 12);
+            this.Glukoza.Name = "Glukoza";
+            this.Glukoza.Size = new System.Drawing.Size(100, 22);
+            this.Glukoza.TabIndex = 0;
             // 
             // label1
             // 
@@ -182,12 +184,12 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Eritrociti";
             // 
-            // textBox8
+            // Eritrociti
             // 
-            this.textBox8.Location = new System.Drawing.Point(80, 124);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 8;
+            this.Eritrociti.Location = new System.Drawing.Point(80, 124);
+            this.Eritrociti.Name = "Eritrociti";
+            this.Eritrociti.Size = new System.Drawing.Size(100, 22);
+            this.Eritrociti.TabIndex = 8;
             // 
             // lable11
             // 
@@ -246,12 +248,12 @@
             this.label14.TabIndex = 21;
             this.label14.Text = "     Kristali \r\nkalcij-oksalata";
             // 
-            // textBox14
+            // Kristali_KO
             // 
-            this.textBox14.Location = new System.Drawing.Point(296, 155);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 22);
-            this.textBox14.TabIndex = 20;
+            this.Kristali_KO.Location = new System.Drawing.Point(296, 155);
+            this.Kristali_KO.Name = "Kristali_KO";
+            this.Kristali_KO.Size = new System.Drawing.Size(100, 22);
+            this.Kristali_KO.TabIndex = 20;
             // 
             // label15
             // 
@@ -309,12 +311,33 @@
             this.SaveUr.TabIndex = 43;
             this.SaveUr.Text = "Spremi";
             this.SaveUr.UseVisualStyleBackColor = true;
+            this.SaveUr.Click += new System.EventHandler(this.SaveUr_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(460, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(82, 16);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Sifra naloga:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(460, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 16);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Sifra pacijenta:";
             // 
             // FrmAnalizaUrina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 450);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.Pacijent);
             this.Controls.Add(this.SifraNaloga);
             this.Controls.Add(this.SaveUr);
@@ -325,7 +348,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.Sluz);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.Kristali_KO);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.UratiAmorfni);
             this.Controls.Add(this.label16);
@@ -337,7 +360,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Leukociti);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.Eritrociti);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Nitriti);
             this.Controls.Add(this.label3);
@@ -345,7 +368,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Bilirubin);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Glukoza);
             this.Name = "FrmAnalizaUrina";
             this.Text = "FrmAnalizaUrina";
             this.Load += new System.EventHandler(this.FrmAnalizaUrina_Load);
@@ -356,7 +379,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Glukoza;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Bilirubin;
@@ -371,7 +394,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Leukociti;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Eritrociti;
         private System.Windows.Forms.Label lable11;
         private System.Windows.Forms.TextBox Urea;
         private System.Windows.Forms.Label label12;
@@ -379,7 +402,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox Sluz;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox Kristali_KO;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox UratiAmorfni;
         private System.Windows.Forms.Label label16;
@@ -387,5 +410,7 @@
         private System.Windows.Forms.TextBox Pacijent;
         private System.Windows.Forms.TextBox SifraNaloga;
         private System.Windows.Forms.Button SaveUr;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

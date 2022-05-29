@@ -24,13 +24,16 @@ namespace MicroBioManager
             InitializeComponent();
             nalog = oznaceniNalog;
         }
-
+        public FrmKrvnaAnaliza()
+        {
+            InitializeComponent();
+        }
 
         private void FrmKrvnaAnaliza_Load(object sender, EventArgs e)
         {
-            SetFormText();
+            
             var rezultati = RezultatiRepos.GetRezultati(oznaceniNalog.Id_rezultata);
-            var pacijent = PacijentRepos.GetPacijent(oznaceniNalog.Sifra_pacijenta);
+           
             MCV.Text = rezultati.MCV;
             MCH.Text = rezultati.MCH;
             MPV.Text = rezultati.MPV;
@@ -51,17 +54,11 @@ namespace MicroBioManager
             Eozinofili.Text=rezultati.Eozinofili;
             Eritrociti.Text = rezultati.Eritrociti;
             Leukociti.Text = rezultati.Leukociti;
-            
-
-            
             Pacijent.Text = oznaceniNalog.Sifra_pacijenta.ToString();
             SifraNaloga.Text = oznaceniNalog.Id.ToString();
         }
 
-        private void SetFormText()
-        {
-            Text = nalog.Sifra_pacijenta + " " + nalog.Id_rezultata;
-        }
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -70,10 +67,39 @@ namespace MicroBioManager
 
         private void SaveKr_Click(object sender, EventArgs e)
         {
-            var zaposlenik = FrmLogin.LoggedZaposlenik;
-            var rezultati = RezultatiRepos.GetRezultati(oznaceniNalog.Id);
-            var pacijent = PacijentRepos.GetPacijent(oznaceniNalog.Sifra_pacijenta);
-            zaposlenik.UpisiPodatke(pacijent, rezultati);
+           
+            var mcv = MCV.Text;
+            var mch= MCH.Text;
+            var mpv= MPV.Text;
+            var mchc= MCHC.Text;
+            var rdw= RDW.Text;
+            var pdw= PDW.Text;
+            var eos= EOS.Text;
+            var lym= LYM.Text;
+            var baso= BASO.Text;
+            var plt= PLT.Text;
+            var neu= NEU.Text;
+            var bazofili= Bazofili.Text;
+            var monociti= Monociti.Text;
+            var limfociti= Limfociti.Text;
+            var hemoglobin= Hemoglobin.Text;
+            var hematokrit= Hematokrit.Text;
+            var neutroliti= Neutroliti.Text;
+            var eozinofili= Eozinofili.Text;
+            var eritrociti= Eritrociti.Text;
+            var leukociti= Leukociti.Text;
+            var sifra_pacijenta = Pacijent.Text;
+            var sifra_naloga = SifraNaloga.Text;
+
+            string sql = $"" +
+                $"UPDATE RezultatiDB SET Sifra_pacijenta ={sifra_pacijenta}, Uzorak ={1},  Eritrociti={eritrociti}" +
+                $", Leukociti= {leukociti}, MCV={mcv}, MCH={mch}, MCHC={mchc}, RDW={rdw}, MPV={mpv}, PDW={pdw}, EOS={eos}," +
+                $" LYM={lym}, BASO={baso}, PLT={plt}, NEU={neu}, Bazofili={bazofili}, Monociti={monociti}, Limfociti={limfociti}," +
+                $" Hemoglobin={hemoglobin}, Hematokrit={hematokrit}, Neutroliti={neutroliti}, Eozinofili ={eozinofili} WHERE Sifra_pacijenta ={sifra_pacijenta} ";
+            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
         }
     }
 }
