@@ -80,5 +80,11 @@ namespace MicroBioManager
             FrmPretraga frmpretraga = new FrmPretraga();
             frmpretraga.ShowDialog();
         }
+
+        private void btnNoviPacijent_Click(object sender, EventArgs e)
+        {
+            FrmNoviPacijent frmNoviPacijent = new FrmNoviPacijent();
+            frmNoviPacijent.ShowDialog();
+        }
     }
 }

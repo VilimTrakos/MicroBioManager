@@ -33,6 +33,7 @@
             this.DodajKrvna = new System.Windows.Forms.Button();
             this.DodajUrin = new System.Windows.Forms.Button();
             this.btnPretraga = new System.Windows.Forms.Button();
+            this.btnNoviPacijent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisNaloga)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             // 
             // OtvoriNalog
             // 
-            this.OtvoriNalog.Location = new System.Drawing.Point(545, 98);
+            this.OtvoriNalog.Location = new System.Drawing.Point(545, 43);
             this.OtvoriNalog.Name = "OtvoriNalog";
             this.OtvoriNalog.Size = new System.Drawing.Size(196, 32);
             this.OtvoriNalog.TabIndex = 1;
@@ -79,19 +80,30 @@
             // 
             // btnPretraga
             // 
-            this.btnPretraga.Location = new System.Drawing.Point(605, 362);
+            this.btnPretraga.Location = new System.Drawing.Point(545, 362);
             this.btnPretraga.Name = "btnPretraga";
-            this.btnPretraga.Size = new System.Drawing.Size(75, 36);
+            this.btnPretraga.Size = new System.Drawing.Size(196, 36);
             this.btnPretraga.TabIndex = 5;
             this.btnPretraga.Text = "Pretraga";
             this.btnPretraga.UseVisualStyleBackColor = true;
             this.btnPretraga.Click += new System.EventHandler(this.btnPretraga_Click);
+            // 
+            // btnNoviPacijent
+            // 
+            this.btnNoviPacijent.Location = new System.Drawing.Point(545, 171);
+            this.btnNoviPacijent.Name = "btnNoviPacijent";
+            this.btnNoviPacijent.Size = new System.Drawing.Size(196, 30);
+            this.btnNoviPacijent.TabIndex = 6;
+            this.btnNoviPacijent.Text = "Dodaj pacijenta";
+            this.btnNoviPacijent.UseVisualStyleBackColor = true;
+            this.btnNoviPacijent.Click += new System.EventHandler(this.btnNoviPacijent_Click);
             // 
             // FrmPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNoviPacijent);
             this.Controls.Add(this.btnPretraga);
             this.Controls.Add(this.DodajUrin);
             this.Controls.Add(this.DodajKrvna);
@@ -112,6 +124,7 @@
         private System.Windows.Forms.Button DodajKrvna;
         private System.Windows.Forms.Button DodajUrin;
         private System.Windows.Forms.Button btnPretraga;
+        private System.Windows.Forms.Button btnNoviPacijent;
     }
 }
 
