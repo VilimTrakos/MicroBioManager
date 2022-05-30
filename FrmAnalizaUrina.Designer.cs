@@ -61,6 +61,7 @@
             this.SaveUr = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Glukoza
@@ -331,11 +332,22 @@
             this.label10.TabIndex = 47;
             this.label10.Text = "Sifra pacijenta:";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(458, 340);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(167, 49);
+            this.btnClose.TabIndex = 48;
+            this.btnClose.Text = "Zatvori";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FrmAnalizaUrina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Pacijent);
@@ -412,5 +424,6 @@
         private System.Windows.Forms.Button SaveUr;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnClose;
     }
 }

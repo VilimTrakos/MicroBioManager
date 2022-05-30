@@ -207,5 +207,10 @@ namespace MicroBioManager
             DB.CloseConnection();
             */
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

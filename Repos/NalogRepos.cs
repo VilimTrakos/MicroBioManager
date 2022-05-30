@@ -11,43 +11,7 @@ namespace MicroBioManager.Repos
 {
     public class NalogRepos
     {
-        public static Nalog GetNalog(Pacijent pacijent, Rezultati rezultati)
-        {
-            Nalog nalog = null;
-            string sql = $"SELECT * FROM NaloziDB WHERE Sifra_pacijenta = {rezultati.Sifra_pacijenta} AND Rezultati_id = {rezultati.Id}";
-            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
-            DB.OpenConnection();
-            SqlDataReader reader = DB.GetDataReader(sql);
-
-            
-
-            if (reader.HasRows)
-            {
-                reader.Read();
-                nalog = CreateObject(reader);
-                reader.Close();
-            }
-            DB.CloseConnection();
-            return nalog;
-
-        }
-        public static Nalog GetNalogSifra(int sifra)
-        {
-            Nalog nalog = null;
-            string sql = $"SELECT * FROM NaloziDB WHERE sifra_pacijenta = {sifra}";
-            DB.SetConfiguration("vtrakosta20_DB", "vtrakosta20", "6}m#UWqL");
-            DB.OpenConnection();
-            SqlDataReader reader = DB.GetDataReader(sql);
-            if (reader.HasRows)
-            {
-                reader.Read();
-                nalog = CreateObject(reader);
-                reader.Close();
-            }
-            DB.CloseConnection();
-            return nalog;
-
-        }
+        
 
 
         public static List<Nalog> GetNalogeSifra(int sifra)
