@@ -36,6 +36,7 @@ namespace MicroBioManager
                 if (zaposlenik!=null && txtPassword.Text == zaposlenik.Password)
                 {
                     LoggedZaposlenik = zaposlenik;
+                    
                     FrmPocetna frmPocetna = new FrmPocetna();
                     Hide();
                     frmPocetna.ShowDialog();
@@ -50,6 +51,7 @@ namespace MicroBioManager
                 }
             }
         }
+        
 
         
     }

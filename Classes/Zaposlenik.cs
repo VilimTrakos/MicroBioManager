@@ -13,11 +13,9 @@ namespace MicroBioManager.Classes
         public string Password { get; set; }
         public string Uloga { get; set; }
 
-        public void UpisiPodatke(Rezultati rezultati)
+        public override string ToString()
         {
-            
-
+            return Id.ToString();
         }
-
     }
 }

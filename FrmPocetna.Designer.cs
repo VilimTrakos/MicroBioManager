@@ -30,10 +30,9 @@
         {
             this.dgvPopisNaloga = new System.Windows.Forms.DataGridView();
             this.OtvoriNalog = new System.Windows.Forms.Button();
-            this.DodajKrvna = new System.Windows.Forms.Button();
-            this.DodajUrin = new System.Windows.Forms.Button();
             this.btnPretraga = new System.Windows.Forms.Button();
             this.btnNoviPacijent = new System.Windows.Forms.Button();
+            this.btnNalog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisNaloga)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,26 +57,6 @@
             this.OtvoriNalog.UseVisualStyleBackColor = true;
             this.OtvoriNalog.Click += new System.EventHandler(this.OtvoriNalog_Click);
             // 
-            // DodajKrvna
-            // 
-            this.DodajKrvna.Location = new System.Drawing.Point(545, 207);
-            this.DodajKrvna.Name = "DodajKrvna";
-            this.DodajKrvna.Size = new System.Drawing.Size(196, 34);
-            this.DodajKrvna.TabIndex = 2;
-            this.DodajKrvna.Text = "Dodaj krvnu analizu";
-            this.DodajKrvna.UseVisualStyleBackColor = true;
-            this.DodajKrvna.Click += new System.EventHandler(this.DodajKrvna_Click);
-            // 
-            // DodajUrin
-            // 
-            this.DodajUrin.Location = new System.Drawing.Point(545, 247);
-            this.DodajUrin.Name = "DodajUrin";
-            this.DodajUrin.Size = new System.Drawing.Size(196, 32);
-            this.DodajUrin.TabIndex = 4;
-            this.DodajUrin.Text = "Dodaj analizu urina";
-            this.DodajUrin.UseVisualStyleBackColor = true;
-            this.DodajUrin.Click += new System.EventHandler(this.DodajUrin_Click);
-            // 
             // btnPretraga
             // 
             this.btnPretraga.Location = new System.Drawing.Point(545, 362);
@@ -98,15 +77,24 @@
             this.btnNoviPacijent.UseVisualStyleBackColor = true;
             this.btnNoviPacijent.Click += new System.EventHandler(this.btnNoviPacijent_Click);
             // 
+            // btnNalog
+            // 
+            this.btnNalog.Location = new System.Drawing.Point(545, 218);
+            this.btnNalog.Name = "btnNalog";
+            this.btnNalog.Size = new System.Drawing.Size(196, 36);
+            this.btnNalog.TabIndex = 7;
+            this.btnNalog.Text = "Dodaj nalog";
+            this.btnNalog.UseVisualStyleBackColor = true;
+            this.btnNalog.Click += new System.EventHandler(this.btnNalog_Click);
+            // 
             // FrmPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNalog);
             this.Controls.Add(this.btnNoviPacijent);
             this.Controls.Add(this.btnPretraga);
-            this.Controls.Add(this.DodajUrin);
-            this.Controls.Add(this.DodajKrvna);
             this.Controls.Add(this.OtvoriNalog);
             this.Controls.Add(this.dgvPopisNaloga);
             this.Name = "FrmPocetna";
@@ -121,10 +109,9 @@
 
         private System.Windows.Forms.DataGridView dgvPopisNaloga;
         private System.Windows.Forms.Button OtvoriNalog;
-        private System.Windows.Forms.Button DodajKrvna;
-        private System.Windows.Forms.Button DodajUrin;
         private System.Windows.Forms.Button btnPretraga;
         private System.Windows.Forms.Button btnNoviPacijent;
+        private System.Windows.Forms.Button btnNalog;
     }
 }
 

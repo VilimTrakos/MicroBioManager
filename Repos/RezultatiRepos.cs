@@ -94,7 +94,7 @@ namespace MicroBioManager.Repos
 
             var rezultati = new Rezultati
             {
-               // Id = id,
+                Id = id,
                 Uzorak = uzorak,
                 Sifra_pacijenta = sifra_pacijenta,
                 Glukoza = glukoza,

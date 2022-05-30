@@ -20,28 +20,14 @@ namespace MicroBioManager
             InitializeComponent();
         }
 
-        private void DodajKrvna_Click(object sender, EventArgs e)
-        {
-            FrmKrvnaAnaliza frmKrvnaAnaliza = new FrmKrvnaAnaliza();
-            Hide();
-            frmKrvnaAnaliza.ShowDialog();
-            Close();
-        }
-
-        private void DodajUrin_Click(object sender, EventArgs e)
-        {
-            FrmAnalizaUrina frmAnalizaUrina = new FrmAnalizaUrina();
-            Hide();
-            frmAnalizaUrina.ShowDialog();
-            Close();
-        }
+        
 
         private void FrmPocetna_Load(object sender, EventArgs e)
         {
             ShowNaloge();
         }
 
-        private void ShowNaloge()
+        public void ShowNaloge()
         {
             var nalozi = NalogRepos.GetNaloge();
             dgvPopisNaloga.DataSource = nalozi;
@@ -85,6 +71,15 @@ namespace MicroBioManager
         {
             FrmNoviPacijent frmNoviPacijent = new FrmNoviPacijent();
             frmNoviPacijent.ShowDialog();
+        }
+
+        private void btnNalog_Click(object sender, EventArgs e)
+        {
+            FrmDodajNalog frmDodajNalog = new FrmDodajNalog();
+            Hide();
+            frmDodajNalog.ShowDialog();
+            Close();
+
         }
     }
 }

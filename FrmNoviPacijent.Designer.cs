@@ -36,8 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblUspjeh = new System.Windows.Forms.Label();
-            this.lblNeuspjeh = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -108,37 +106,11 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblUspjeh
-            // 
-            this.lblUspjeh.AutoSize = true;
-            this.lblUspjeh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F);
-            this.lblUspjeh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblUspjeh.Location = new System.Drawing.Point(12, 199);
-            this.lblUspjeh.Name = "lblUspjeh";
-            this.lblUspjeh.Size = new System.Drawing.Size(285, 29);
-            this.lblUspjeh.TabIndex = 8;
-            this.lblUspjeh.Text = "Uspješno dodan pacijent!";
-            this.lblUspjeh.Visible = false;
-            // 
-            // lblNeuspjeh
-            // 
-            this.lblNeuspjeh.AutoSize = true;
-            this.lblNeuspjeh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F);
-            this.lblNeuspjeh.ForeColor = System.Drawing.Color.Red;
-            this.lblNeuspjeh.Location = new System.Drawing.Point(24, 237);
-            this.lblNeuspjeh.Name = "lblNeuspjeh";
-            this.lblNeuspjeh.Size = new System.Drawing.Size(259, 29);
-            this.lblNeuspjeh.TabIndex = 9;
-            this.lblNeuspjeh.Text = "Šifra je već iskorištena!";
-            this.lblNeuspjeh.Visible = false;
-            // 
             // FrmNoviPacijent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 284);
-            this.Controls.Add(this.lblNeuspjeh);
-            this.Controls.Add(this.lblUspjeh);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSifra);
@@ -164,7 +136,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label lblUspjeh;
-        private System.Windows.Forms.Label lblNeuspjeh;
     }
 }
