@@ -3,4 +3,5 @@ Projekt u sklopu predmeta programsko inžinjerstvo, program je zamišljen kao pr
 Program omogućuje logiranje, prikaz podataka iz baze, dodavanje novog pacijenta, pregled analize krvi ili urina ovisno o odabranom nalogu. 
 Moguće je dodavanje novog popisa rezultata i pridruživanje istog novom nalogu. 
 Moguće je pretraživati bazu podataka unosom šifre pacijenta.
-<b><font size="18"><font color="ff0000">Napomena: ovo nije finalna verzija</font></font> </b>
+<br>
+<b>Napomena: ovo nije finalna verzija</b>
